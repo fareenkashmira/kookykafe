@@ -47,6 +47,7 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 .card-img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.23,1,0.32,1);filter:saturate(1.1) brightness(0.92);}
 .card:hover .card-img{transform:scale(1.1);}
 .card-tag{position:absolute;top:1rem;left:1rem;background:var(--accent);color:var(--dark);font-family:'Baumans',sans-serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;padding:3px 10px;border-radius:50px;z-index:2;}
+.card-disclaimer{position:absolute;bottom:0.4rem;right:0.6rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.6rem;color:rgba(255,255,255,0.55);z-index:3;letter-spacing:0.03em;}
 .card-body{padding:1.1rem 1.4rem 1.3rem;}
 .card-name{font-family:'Mirza',serif;font-size:1.22rem;color:var(--light);margin-bottom:0.3rem;line-height:1.2;}
 .card-qty{font-family:'Baumans',sans-serif;font-size:0.68rem;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.3rem;opacity:0.85;}
@@ -95,6 +96,12 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 .order-btn{width:100%;background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);border:none;border-radius:12px;padding:0.95rem;color:var(--dark);font-family:'Baumans',sans-serif;font-size:0.85rem;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;}
 .order-btn:hover{opacity:0.88;transform:translateY(-2px);}
 
+/* ── Footer disclaimer banner ── */
+.disclaimer-banner{background:rgba(196,129,58,0.08);border:1px solid rgba(196,129,58,0.25);border-radius:14px;padding:1rem 1.4rem;margin-top:2rem;display:flex;align-items:flex-start;gap:0.8rem;text-align:left;}
+.disclaimer-banner .disc-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px;}
+.disclaimer-banner p{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);font-size:0.88rem;line-height:1.65;}
+.disclaimer-banner strong{color:var(--accent2);font-style:normal;font-weight:600;}
+
 .footer{background:var(--dark);border-top:2px solid var(--accent);padding:3.5rem 2.5rem;text-align:center;margin-top:4rem;}
 .footer-card{display:inline-flex;align-items:center;gap:1.2rem;background:var(--dark2);padding:1.4rem 2.8rem;border-radius:18px;border:1px solid rgba(196,129,58,0.3);}
 .footer-ring{width:62px;height:62px;border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Mirza',serif;font-size:24px;font-weight:700;color:var(--accent);letter-spacing:-3px;padding-left:2px;background:rgba(196,129,58,0.07);flex-shrink:0;}
@@ -110,6 +117,9 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 .policy-block h4{font-family:'Mirza',serif;font-size:1.05rem;color:var(--accent);margin-bottom:0.5rem;}
 .policy-block p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:var(--grey);line-height:1.6;}
 
+/* Pre-order highlight badge inside the timing block */
+.preorder-badge{display:inline-block;background:rgba(196,129,58,0.18);border:1px solid rgba(196,129,58,0.4);border-radius:50px;padding:2px 10px;font-family:'Baumans',sans-serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.5rem;}
+
 @media(max-width:600px){
   header{padding:0.8rem 1.2rem;}
   .menu-sec{padding:2rem 1.2rem;}
@@ -118,6 +128,7 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
   .hero h2{font-size:2.4rem;}
   .cat-nav{top:72px;gap:0.4rem;padding:0.9rem 1rem;}
   .cat-btn{padding:0.35rem 0.9rem;font-size:0.7rem;}
+  .footer-card{flex-direction:column;padding:1.2rem 1.6rem;}
 }
 </style>
 </head>
@@ -179,6 +190,15 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
     <svg style="width:14px;height:14px;fill:var(--accent);vertical-align:middle;margin-right:6px;" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
     Sunder Nagari, Delhi – 110093
   </div>
+
+  <!-- ── Global Disclaimer Banner ── -->
+  <div class="disclaimer-banner">
+    <span class="disc-icon">📸</span>
+    <p>
+      <strong>Images &amp; Product Disclaimer:</strong>
+      Image for <strong>representation purposes only.</strong> Real product may vary in appearance due to production.</p>
+  </div>
+
   <div class="policy-section">
     <h3 class="policy-title">Our Policies</h3>
     <div class="policy-grid">
@@ -194,13 +214,14 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
       </div>
       <div class="policy-block">
         <div class="policy-icon">🕐</div>
-        <h4>Order Timings</h4>
-        <p>We accept orders during operating hours only. Orders placed outside hours will be processed on the next business day.</p>
+        <h4>Pre-Order for Timely Delivery</h4>
+        <div class="preorder-badge">Pre-Order Recommended</div>
+        <p>To ensure your order reaches you fresh and on time, we strongly recommend placing your order in advance. Last-minute orders will get delivered the next day.</p>
       </div>
       <div class="policy-block">
         <div class="policy-icon">📦</div>
         <h4>Packaging</h4>
-        <p>We use minimal, eco-conscious packaging wherever possible. Dine-in orders are served in reusable crockery.</p>
+        <p>We use minimal, eco-conscious packaging wherever possible.</p>
       </div>
     </div>
   </div>
@@ -226,94 +247,41 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 </div>
 
 <script>
-/*
-=========================================================
-  IMAGE FOLDER SETUP
-  Place all images inside an "images/" folder
-  in the same directory as this HTML file.
-
-  Required image filenames:
-
-  SIPS
-    images/iced-americano.jpg
-    images/hibiscus-mojito.jpg
-    images/orange-slushy.jpg
-    images/cold-coffee.jpg
-    images/chamomile.jpg
-    images/mango-lassi.jpg
-    images/lemon-mint-cooler.jpg
-    images/rose-milk.jpg
-    images/watermelon-juice.jpg
-
-  BOBA TEA
-    images/boba-milk.jpg        (used for Classic Milk Boba)
-    images/boba-fruit.jpg       (used for Fruit Boba)
-    images/boba-cheese-foam.jpg (used for Cheese Foam Boba)
-
-  VEG
-    images/paneer-tikka.jpg
-    images/veg-burger.jpg
-    images/loaded-nachos.jpg
-    images/mushroom-quesadilla.jpg
-    images/pesto-pasta.jpg
-    images/paratha.jpg
-    images/cheese-sandwich.jpg
-    images/rice-bowl.jpg
-    images/garlic-cheese-bread.jpg
-
-  NON-VEG
-    images/dum-biryani.jpg
-    images/seekh-kebab.jpg
-    images/shami-kebab.jpg
-    images/butter-chicken.jpg
-    images/chicken-burger.jpg
-    images/mutton-korma.jpg
-    images/chicken-roll.jpg
-
-  SWEETS
-    images/tiramisu.jpg
-    images/pistachio-cake.jpg
-    images/chocolate-lava.jpg
-    images/gulab-jamun.jpg
-    images/mango-cheesecake.jpg
-=========================================================
-*/
-
 const FALLBACK = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop';
 
 const WA_ICON=`<svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
 
 const items = {
   sips:[
-    {name:"Iced Americano",         qty:"300 ml", desc:"Cold espresso over ice. No drama — pure clarity.",                                            price:80, tag:"Cold Brew",  img:"images/iced-americano.jpg"},
-    {name:"Hibiscus Mojito",        qty:"350 ml", desc:"Tangy hibiscus, fresh mint, a whisper of lime. A whole mood.",                               price:75, tag:"Signature",  img:"images/hibiscus-mojito.jpg"},
-    {name:"Orange Slushie",         qty:"350 ml", desc:"Crushed citrus and ice — bright, cold, unapologetically loud.",                              price:75, tag:"Chilled",    img:"images/orange-slushy.jpg"},
-    {name:"Cold Coffee",            qty:"300 ml", desc:"Rich, creamy, iced. The kind you don't want to finish.",                                     price:90, tag:"Classic",    img:"images/cold-coffee.jpg"},
-    {name:"Rose Lassi",             qty:"300 ml", desc:"Chilled yoghurt blended with rose, cardamom, and a touch of sweetness. Soft and nostalgic.", price:80, tag:"Lassi",      img:"images/rose-lassi.jpg"},
-    {name:"Blue Lemonade Fizz",     qty:"350 ml", desc:"Butterfly pea flower tea meets fizzy lemon. Colour-shifting, floral, and very extra.",       price:90, tag:"Butterfly Pea",img:"images/blue-lemonade.jpg"},
-    {name:"Boba Tea",               qty:"350 ml", desc:"Chewy tapioca pearls in your choice of milk or fruit tea. Sip slow — good things take time.", price:130, tag:"Boba",      img:"images/boba-milk.jpg",
+    {name:"Iced Americano",          qty:"300 ml", desc:"Cold espresso over ice. No drama — pure clarity.",                                            price:80,  tag:"Cold Brew",    img:"images/iced-americano.jpg"},
+    {name:"Hibiscus Mojito",         qty:"350 ml", desc:"Tangy hibiscus, fresh mint, a whisper of lime. A whole mood.",                               price:75,  tag:"Signature",    img:"images/hibiscus-mojito.jpg"},
+    {name:"Orange Slushie",          qty:"350 ml", desc:"Crushed citrus and ice — bright, cold, unapologetically loud.",                              price:75,  tag:"Chilled",      img:"images/orange-slushy.jpg"},
+    {name:"Cold Coffee",             qty:"300 ml", desc:"Rich, creamy, iced. The kind you don't want to finish.",                                     price:90,  tag:"Classic",      img:"images/cold-coffee.jpg"},
+    {name:"Rose Lassi",              qty:"300 ml", desc:"Chilled yoghurt blended with rose, cardamom, and a touch of sweetness. Soft and nostalgic.", price:80,  tag:"Lassi",        img:"images/rose-lassi.jpg"},
+    {name:"Blue Lemonade Fizz",      qty:"350 ml", desc:"Butterfly pea flower tea meets fizzy lemon. Colour-shifting, floral, and very extra.",       price:90,  tag:"Butterfly Pea",img:"images/blue-lemonade.jpg"},
+    {name:"Boba Tea",                qty:"350 ml", desc:"Chewy tapioca pearls in your choice of milk or fruit tea. Sip slow — good things take time.",price:130, tag:"Boba",         img:"images/boba-milk.jpg",
       variants:["Brown Sugar Milk Tea","Taro Milk Tea","Matcha Milk Tea","Strawberry Fruit Tea","Mango Fruit Tea","Lychee Fruit Tea","Passion Fruit Tea","Peach Tea"]},
-    {name:"Chamomile Tea",          qty:"350 ml", desc:"Floral, calm, quietly elegant. Served chilled with a curl of honey.",                        price:60, tag:"Herbal",     img:"images/chamomile.jpg"}
+    {name:"Chamomile Tea",           qty:"350 ml", desc:"Floral, calm, quietly elegant. Served chilled with a curl of honey.",                        price:60,  tag:"Herbal",       img:"images/chamomile.jpg"}
   ],
   veg:[
-    {name:"Rice Bowl with Curry",   qty:"1 bowl (350 g)",     desc:"Comfort in a bowl. Slow-cooked curry on steamed basmati.",                       price:140, tag:"Bowl",       img:"images/rice-bowl.jpg"},
-    {name:"Paratha",                qty:"1 piece",            desc:"Hand-rolled, griddle-fried, served with pickle and yoghurt.",                     price:60, tag:"Homestyle",  img:"images/paratha.jpg",
+    {name:"Rice Bowl with Curry",    qty:"1 bowl (350 g)",     desc:"Comfort in a bowl. Slow-cooked curry on steamed basmati.",                                    price:140, tag:"Bowl",      img:"images/rice-bowl.jpg"},
+    {name:"Paratha",                 qty:"1 piece",            desc:"Hand-rolled, griddle-fried, served with pickle and yoghurt.",                                  price:60,  tag:"Homestyle", img:"images/paratha.jpg",
       variants:["Aloo Paratha","Paneer Paratha","Laccha Paratha","Methi Paratha"]},
-    {name:"Chilli Garlic Toast",    qty:"4 pieces",           desc:"Crisp toast, punchy garlic butter, red chilli flakes. The bold move.",            price:80, tag:"Toasted",    img:"images/garlic-cheese-bread.jpg"},
-    {name:"Cheese Sandwich",        qty:"1 piece (2 slices)", desc:"Double-toasted, gooey middle, golden crust. Simple, done right.",                 price:90, tag:"Toasted",    img:"images/cheese-sandwich.jpg"},
-    {name:"Spaghetti",              qty:"1 bowl (300 g)",     desc:"Al dente spaghetti tossed in a rich sauce. Classic and unapologetically satisfying.", price:140, tag:"Pasta",  img:"images/pestopasta.jpg",
+    {name:"Chilli Garlic Toast",     qty:"4 pieces",           desc:"Crisp toast, punchy garlic butter, red chilli flakes. The bold move.",                         price:80,  tag:"Toasted",   img:"images/garlic-cheese-bread.jpg"},
+    {name:"Cheese Sandwich",         qty:"1 piece (2 slices)", desc:"Double-toasted, gooey middle, golden crust. Simple, done right.",                              price:90,  tag:"Toasted",   img:"images/cheese-sandwich.jpg"},
+    {name:"Spaghetti",               qty:"1 bowl (300 g)",     desc:"Al dente spaghetti tossed in a rich sauce. Classic and unapologetically satisfying.",           price:140, tag:"Pasta",     img:"images/pesto-pasta.jpg",
       variants:["Arrabbiata","Aglio e Olio","Pesto","Marinara"]}
   ],
   nonveg:[
-    {name:"Chicken Dum Biryani",    qty:"1 serving (400 g)", desc:"Saffron-kissed, slow-cooked. Tender chicken layered with fragrant rice — a whole ritual.", price:0=180, tag:"Dum Style", img:"images/dum-biryani.jpg"},
-    {name:"Chicken Nuggets",        qty:"6 pieces",          desc:"Crispy golden outside, juicy inside. Served with your choice of dip.",             price:130, tag:"Crispy",     img:"images/chicken-burger.jpg",
+    {name:"Chicken Dum Biryani",     qty:"1 serving (400 g)", desc:"Saffron-kissed, slow-cooked. Tender chicken layered with fragrant rice — a whole ritual.",      price:180, tag:"Dum Style", img:"images/dum-biryani.jpg"},
+    {name:"Chicken Nuggets",         qty:"6 pieces",          desc:"Crispy golden outside, juicy inside. Served with your choice of dip.",                          price:130, tag:"Crispy",    img:"images/chicken-nuggets.jpg",
       variants:["Ketchup","Honey Mustard","Chipotle Mayo","Garlic Dip"]},
-    {name:"Chicken Soup",           qty:"1 bowl (300 ml)",   desc:"Slow-simmered, light, restorative. The kind that actually fixes things.",           price:120, tag:"Soup",       img:"images/butter-chicken.jpg"},
-    {name:"Shami Kababs",           qty:"3 pieces (plate)",  desc:"Soft pan-fried patties — subtle spice, deep flavor, zero noise. Served with green chutney.", price:110, tag:"Pan-Fried", img:"images/shami-kebab.jpg"}
+    {name:"Chicken Soup",            qty:"1 bowl (300 ml)",   desc:"Slow-simmered, light, restorative. The kind that actually fixes things.",                        price:120, tag:"Soup",      img:"images/chicken-soup.jpg"},
+    {name:"Shami Kababs",            qty:"3 pieces (plate)",  desc:"Soft pan-fried patties — subtle spice, deep flavor, zero noise. Served with green chutney.",    price:110, tag:"Pan-Fried", img:"images/shami-kebab.jpg"}
   ],
   sweets:[
-    {name:"Tiramisu",              qty:"1 piece (80 g)",   desc:"Espresso-soaked layers, mascarpone dreams, cocoa dust finish.",                 price:90, tag:"Dessert",    img:"images/tiramisu.jpg"},
-    {name:"Pistachio Ice Cream Cake", qty:"1 slice (80 g)",desc:"Nutty, creamy, frozen layers of pistachio — a little theatrical. Exactly as it should be.", price:100, tag:"Signature",  img:"images/pistachio-cake.jpg"}
+    {name:"Tiramisu",                qty:"1 piece (80 g)",  desc:"Espresso-soaked layers, mascarpone dreams, cocoa dust finish.",                                    price:90,  tag:"Dessert",   img:"images/tiramisu.jpg"},
+    {name:"Pistachio Ice Cream Cake",qty:"1 slice (80 g)",  desc:"Nutty, creamy, frozen layers of pistachio — a little theatrical. Exactly as it should be.",       price:100, tag:"Signature", img:"images/pistachio-cake.jpg"}
   ]
 };
 
@@ -332,6 +300,7 @@ function buildCards(sec){
         <span class="card-tag">${item.tag}</span>
         <img class="card-img" src="${item.img}" alt="${item.name}" loading="lazy"
           onerror="this.src='${FALLBACK}'">
+        <span class="card-disclaimer">Image for representation only. Real product may vary.</span>
       </div>
       <div class="card-body">
         <div class="card-name">${item.name}</div>
