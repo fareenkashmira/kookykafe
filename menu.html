@@ -27,6 +27,7 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 .hero::before{content:'';position:absolute;top:-60%;left:-10%;width:120%;height:220%;background:radial-gradient(ellipse at 50% 60%,rgba(196,129,58,0.18) 0%,transparent 65%);pointer-events:none;}
 .hero h2{font-family:'Mirza',serif;font-size:clamp(2.8rem,6vw,4rem);color:var(--light);letter-spacing:0.1em;position:relative;}
 .hero h2 span{color:var(--accent);}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);font-size:1rem;margin-top:0.8rem;letter-spacing:0.04em;position:relative;}
 
 .cat-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:0.6rem;padding:1.2rem 2rem;background:var(--bg);position:sticky;top:86px;z-index:50;border-bottom:1px solid rgba(139,90,43,0.2);}
 .cat-btn{background:transparent;border:1.5px solid var(--medium);border-radius:50px;padding:0.4rem 1.2rem;font-family:'Baumans',sans-serif;font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--medium);cursor:pointer;transition:all 0.3s;}
@@ -100,6 +101,14 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 .footer-info h2{font-family:'Mirza',serif;font-size:2.1rem;color:var(--accent);line-height:1;}
 .footer-info p{font-family:'Baumans',sans-serif;font-size:0.6rem;color:var(--grey);letter-spacing:0.35em;text-transform:uppercase;margin-top:4px;}
 .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);font-size:0.95rem;margin-top:1.8rem;letter-spacing:0.03em;}
+.footer-address{font-family:'Baumans',sans-serif;font-size:0.72rem;color:var(--grey);letter-spacing:0.22em;text-transform:uppercase;margin-top:1rem;}
+.policy-section{margin-top:3rem;border-top:1px solid rgba(196,129,58,0.2);padding-top:2.5rem;}
+.policy-title{font-family:'Mirza',serif;font-size:1.5rem;color:var(--accent);margin-bottom:1.8rem;letter-spacing:0.08em;}
+.policy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;text-align:left;}
+.policy-block{background:var(--dark2);border:1px solid rgba(196,129,58,0.2);border-radius:16px;padding:1.4rem 1.6rem;}
+.policy-icon{font-size:1.4rem;margin-bottom:0.6rem;}
+.policy-block h4{font-family:'Mirza',serif;font-size:1.05rem;color:var(--accent);margin-bottom:0.5rem;}
+.policy-block p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:var(--grey);line-height:1.6;}
 
 @media(max-width:600px){
   header{padding:0.8rem 1.2rem;}
@@ -119,7 +128,7 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
     <div class="logo-ring"><span class="kk">KK</span></div>
     <div class="logo-text">
       <h1>Kooky Kafe</h1>
-      <span class="sub">Finest Flavors At Your Table</span>
+      <span class="sub">Order Online · Delivered To You</span>
     </div>
   </div>
   <button class="cart-trigger" onclick="toggleCart()">
@@ -130,11 +139,11 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 
 <div class="hero">
   <h2>Our <span>Menu</span></h2>
+  <p class="hero-sub">Browse, add to cart &amp; order via WhatsApp — we deliver to you.</p>
 </div>
 
 <nav class="cat-nav">
   <button class="cat-btn active" data-cat="sips">Sips</button>
-  <button class="cat-btn" data-cat="boba">Boba Tea</button>
   <button class="cat-btn" data-cat="veg">Veg</button>
   <button class="cat-btn" data-cat="nonveg">Non-Veg</button>
   <button class="cat-btn" data-cat="sweets">Sweets</button>
@@ -143,10 +152,6 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
 <section class="menu-sec active" id="sips">
   <h2 class="sec-title">Sips &amp; Refreshments</h2>
   <div class="grid" id="sipsGrid"></div>
-</section>
-<section class="menu-sec" id="boba">
-  <h2 class="sec-title">Boba Tea</h2>
-  <div class="grid" id="bobaGrid"></div>
 </section>
 <section class="menu-sec" id="veg">
   <h2 class="sec-title">Veg Eats</h2>
@@ -166,10 +171,39 @@ header{background:var(--dark);padding:1rem 2.5rem;display:flex;align-items:cente
     <div class="footer-ring">KK</div>
     <div class="footer-info">
       <h2>Kooky Kafe</h2>
-      <p>Finest Flavors At Your Table</p>
+      <p>Order Online · Delivered To You</p>
     </div>
   </div>
   <p class="footer-tagline">Every bite, a little story. Every sip, a little magic.</p>
+  <div class="footer-address">
+    <svg style="width:14px;height:14px;fill:var(--accent);vertical-align:middle;margin-right:6px;" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Sunder Nagari, Delhi – 110093
+  </div>
+  <div class="policy-section">
+    <h3 class="policy-title">Our Policies</h3>
+    <div class="policy-grid">
+      <div class="policy-block">
+        <div class="policy-icon">🍽️</div>
+        <h4>Food &amp; Hygiene</h4>
+        <p>All items are freshly prepared. We follow strict hygiene standards in our kitchen. Please inform us of any allergies before ordering.</p>
+      </div>
+      <div class="policy-block">
+        <div class="policy-icon">🔄</div>
+        <h4>Refunds &amp; Replacements</h4>
+        <p>If your order arrives incorrect or unsatisfactory, reach out within 10 minutes of receipt. We will replace or refund as applicable.</p>
+      </div>
+      <div class="policy-block">
+        <div class="policy-icon">🕐</div>
+        <h4>Order Timings</h4>
+        <p>We accept orders during operating hours only. Orders placed outside hours will be processed on the next business day.</p>
+      </div>
+      <div class="policy-block">
+        <div class="policy-icon">📦</div>
+        <h4>Packaging</h4>
+        <p>We use minimal, eco-conscious packaging wherever possible. Dine-in orders are served in reusable crockery.</p>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <div class="overlay" id="overlay" onclick="toggleCart()"></div>
@@ -251,73 +285,35 @@ const WA_ICON=`<svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c
 
 const items = {
   sips:[
-    {name:"Iced Americano",        qty:"300 ml", desc:"Cold espresso over ice. No drama — pure clarity.",                                          price:180, tag:"Cold Brew",  img:"images/iced-americano.jpg"},
-    {name:"Hibiscus Mojito",       qty:"350 ml", desc:"Tangy hibiscus, fresh mint, a whisper of lime. A whole mood.",                             price:220, tag:"Signature",  img:"images/hibiscus-mojito.jpg"},
-    {name:"Orange Slushy",         qty:"400 ml", desc:"Crushed citrus and ice — bright, cold, unapologetically loud.",                            price:160, tag:"Chilled",    img:"images/orange-slushy.jpg"},
-    {name:"Cold Coffee",           qty:"350 ml", desc:"Rich, creamy, iced. The kind you don't want to finish.",                                   price:190, tag:"Classic",    img:"images/cold-coffee.jpg"},
-    {name:"Chamomile Refreshment", qty:"300 ml", desc:"Floral, calm, quietly elegant. Served chilled with a curl of honey.",                      price:170, tag:"Herbal",     img:"images/chamomile.jpg"},
-    {name:"Mango Lassi",           qty:"350 ml", desc:"Thick, sweet, sun-yellow. The kind of drink that fixes things.",                           price:180, tag:"Classic",    img:"images/mango-lassi.jpg"},
-    {name:"Lemon Mint Cooler",     qty:"400 ml", desc:"Sharp, clean, impossibly refreshing. Drink fast before the ice melts.",                    price:150, tag:"Fresh",      img:"images/lemon-mint-cooler.jpg"},
-    {name:"Rose Milk",             qty:"300 ml", desc:"Chilled milk with rose syrup and a pinch of cardamom. Soft and a little nostalgic.",       price:160, tag:"Floral",     img:"images/rose-milk.jpg"},
-    {name:"Watermelon Juice",      qty:"400 ml", desc:"Fresh-pressed, no sugar needed. Summer in a glass.",                                       price:140, tag:"Fresh",      img:"images/watermelon-juice.jpg"}
-  ],
-  boba:[
-    {
-      name:"Classic Milk Boba",
-      qty:"500 ml",
-      desc:"Creamy milk tea with chewy tapioca pearls. The original, done right. Pick your flavour.",
-      price:280,
-      tag:"Milk Tea",
-      img:"images/boba-milk.jpg",
-      variants:["Brown Sugar","Taro","Matcha","Vanilla","Caramel","Thai Tea","Oolong","Jasmine"]
-    },
-    {
-      name:"Fruit Boba",
-      qty:"500 ml",
-      desc:"Light, fruity, ice-cold. Popping pearls that actually pop. Pick your flavour.",
-      price:270,
-      tag:"Fruit Tea",
-      img:"images/boba-fruit.jpg",
-      variants:["Strawberry","Mango","Lychee","Passion Fruit","Peach","Watermelon","Blueberry","Green Apple"]
-    },
-    {
-      name:"Cheese Foam Boba",
-      qty:"500 ml",
-      desc:"Salted cheese foam poured over your tea of choice. Strange. Addictive. Non-negotiable. Pick your flavour.",
-      price:320,
-      tag:"Signature",
-      img:"images/boba-cheese-foam.jpg",
-      variants:["Brown Sugar","Matcha","Oolong","Black Tea","Taro"]
-    }
+    {name:"Iced Americano",         qty:"300 ml", desc:"Cold espresso over ice. No drama — pure clarity.",                                            price:80, tag:"Cold Brew",  img:"images/iced-americano.jpg"},
+    {name:"Hibiscus Mojito",        qty:"350 ml", desc:"Tangy hibiscus, fresh mint, a whisper of lime. A whole mood.",                               price:75, tag:"Signature",  img:"images/hibiscus-mojito.jpg"},
+    {name:"Orange Slushie",         qty:"350 ml", desc:"Crushed citrus and ice — bright, cold, unapologetically loud.",                              price:75, tag:"Chilled",    img:"images/orange-slushy.jpg"},
+    {name:"Cold Coffee",            qty:"300 ml", desc:"Rich, creamy, iced. The kind you don't want to finish.",                                     price:90, tag:"Classic",    img:"images/cold-coffee.jpg"},
+    {name:"Rose Lassi",             qty:"300 ml", desc:"Chilled yoghurt blended with rose, cardamom, and a touch of sweetness. Soft and nostalgic.", price:80, tag:"Lassi",      img:"images/rose-lassi.jpg"},
+    {name:"Blue Lemonade Fizz",     qty:"350 ml", desc:"Butterfly pea flower tea meets fizzy lemon. Colour-shifting, floral, and very extra.",       price:90, tag:"Butterfly Pea",img:"images/blue-lemonade.jpg"},
+    {name:"Boba Tea",               qty:"350 ml", desc:"Chewy tapioca pearls in your choice of milk or fruit tea. Sip slow — good things take time.", price:130, tag:"Boba",      img:"images/boba-milk.jpg",
+      variants:["Brown Sugar Milk Tea","Taro Milk Tea","Matcha Milk Tea","Strawberry Fruit Tea","Mango Fruit Tea","Lychee Fruit Tea","Passion Fruit Tea","Peach Tea"]},
+    {name:"Chamomile Tea",          qty:"350 ml", desc:"Floral, calm, quietly elegant. Served chilled with a curl of honey.",                        price:60, tag:"Herbal",     img:"images/chamomile.jpg"}
   ],
   veg:[
-    {name:"Paneer Tikka",          qty:"6 pieces",          desc:"Charred, smoky, spiced just enough to make you order another round.",            price:280, tag:"Grilled",    img:"images/paneer-tikka.jpg"},
-    {name:"Veg Burger",            qty:"1 piece",            desc:"Crispy patty, slaw, smoky mayo, brioche bun. No sad salads.",                  price:220, tag:"Stacked",    img:"images/veg-burger.jpg"},
-    {name:"Loaded Nachos",         qty:"1 sharing plate",    desc:"Corn chips under cheese, jalapeños, salsa, sour cream. Chaotic good.",          price:260, tag:"Sharing",    img:"images/loaded-nachos.jpg"},
-    {name:"Mushroom Quesadilla",   qty:"2 pieces",           desc:"Earthy mushrooms, melted cheese, a little heat. Pressed and golden.",           price:250, tag:"Pressed",    img:"images/mushroom-quesadilla.jpg"},
-    {name:"Pesto Pasta",           qty:"1 bowl (300 g)",     desc:"Al dente penne with fresh basil pesto, cherry tomatoes, shaved parmesan.",      price:290, tag:"Pasta",      img:"images/pesto-pasta.jpg"},
-    {name:"Garlic Cheese Bread",   qty:"4 pieces",           desc:"Buttery garlic, melted cheese, herb crust. Pull-apart perfection.",             price:230, tag:"Baked",      img:"images/garlic-cheese-bread.jpg"},
-    {name:"Rice Bowl with Curry",  qty:"1 bowl (350 g)",     desc:"Comfort in a bowl. Slow-cooked curry on steamed basmati.",                     price:260, tag:"Bowl",       img:"images/rice-bowl.jpg"},
-    {name:"Cheese Sandwich",       qty:"1 piece (2 slices)", desc:"Double-toasted, gooey middle, golden crust. Simple, done right.",               price:200, tag:"Toasted",    img:"images/cheese-sandwich.jpg"},
-    {name:"Paratha",               qty:"1 piece",            desc:"Hand-rolled, griddle-fried, served with pickle and yoghurt.",                   price:120, tag:"Homestyle",  img:"images/paratha.jpg",
-      variants:["Aloo Paratha","Paneer Paratha","Laccha Paratha","Methi Paratha"]}
+    {name:"Rice Bowl with Curry",   qty:"1 bowl (350 g)",     desc:"Comfort in a bowl. Slow-cooked curry on steamed basmati.",                       price:140, tag:"Bowl",       img:"images/rice-bowl.jpg"},
+    {name:"Paratha",                qty:"1 piece",            desc:"Hand-rolled, griddle-fried, served with pickle and yoghurt.",                     price:60, tag:"Homestyle",  img:"images/paratha.jpg",
+      variants:["Aloo Paratha","Paneer Paratha","Laccha Paratha","Methi Paratha"]},
+    {name:"Chilli Garlic Toast",    qty:"4 pieces",           desc:"Crisp toast, punchy garlic butter, red chilli flakes. The bold move.",            price:80, tag:"Toasted",    img:"images/garlic-cheese-bread.jpg"},
+    {name:"Cheese Sandwich",        qty:"1 piece (2 slices)", desc:"Double-toasted, gooey middle, golden crust. Simple, done right.",                 price:90, tag:"Toasted",    img:"images/cheese-sandwich.jpg"},
+    {name:"Spaghetti",              qty:"1 bowl (300 g)",     desc:"Al dente spaghetti tossed in a rich sauce. Classic and unapologetically satisfying.", price:140, tag:"Pasta",  img:"images/pestopasta.jpg",
+      variants:["Arrabbiata","Aglio e Olio","Pesto","Marinara"]}
   ],
   nonveg:[
-    {name:"Dum Biryani",           qty:"1 serving (400 g)", desc:"Saffron-kissed, slow-cooked. Layered rice and tender meat — a whole ritual.",   price:380, tag:"Dum Style",  img:"images/dum-biryani.jpg",
-      variants:["Chicken Biryani","Mutton Biryani"]},
-    {name:"Seekh Kebabs",          qty:"4 pieces",          desc:"Spiced minced meat, charred over coal. Rustic and boldly flavored.",             price:320, tag:"Grilled",    img:"images/seekh-kebab.jpg"},
-    {name:"Shami Kebabs",          qty:"3 pieces",          desc:"Soft pan-fried patties — subtle spice, deep flavor, zero noise.",               price:280, tag:"Pan-Fried",  img:"images/shami-kebab.jpg"},
-    {name:"Butter Chicken",        qty:"1 bowl (300 g)",    desc:"Velvety tomato gravy, tender chicken, just enough butter to make you forget things.", price:360, tag:"Gravy",    img:"images/butter-chicken.jpg"},
-    {name:"Chicken Burger",        qty:"1 piece",           desc:"Crispy fried chicken, chipotle mayo, pickles, brioche. Aggressively good.",     price:280, tag:"Stacked",    img:"images/chicken-burger.jpg"},
-    {name:"Mutton Korma",          qty:"1 bowl (300 g)",    desc:"Slow-braised mutton in a rich, aromatic gravy. Patience in a bowl.",            price:420, tag:"Slow-Cooked",img:"images/mutton-korma.jpg"},
-    {name:"Chicken Kathi Roll",    qty:"2 rolls",           desc:"Spiced grilled chicken, onions, green chutney, wrapped tight in paratha.",      price:260, tag:"Roll",       img:"images/chicken-roll.jpg"}
+    {name:"Chicken Dum Biryani",    qty:"1 serving (400 g)", desc:"Saffron-kissed, slow-cooked. Tender chicken layered with fragrant rice — a whole ritual.", price:0=180, tag:"Dum Style", img:"images/dum-biryani.jpg"},
+    {name:"Chicken Nuggets",        qty:"6 pieces",          desc:"Crispy golden outside, juicy inside. Served with your choice of dip.",             price:130, tag:"Crispy",     img:"images/chicken-burger.jpg",
+      variants:["Ketchup","Honey Mustard","Chipotle Mayo","Garlic Dip"]},
+    {name:"Chicken Soup",           qty:"1 bowl (300 ml)",   desc:"Slow-simmered, light, restorative. The kind that actually fixes things.",           price:120, tag:"Soup",       img:"images/butter-chicken.jpg"},
+    {name:"Shami Kababs",           qty:"3 pieces (plate)",  desc:"Soft pan-fried patties — subtle spice, deep flavor, zero noise. Served with green chutney.", price:110, tag:"Pan-Fried", img:"images/shami-kebab.jpg"}
   ],
   sweets:[
-    {name:"Tiramisu",              qty:"1 piece (180 g)",   desc:"Espresso-soaked layers, mascarpone dreams, cocoa dust finish.",                 price:280, tag:"Dessert",    img:"images/tiramisu.jpg"},
-    {name:"Pistachio Cake",        qty:"1 slice (200 g)",   desc:"Nutty, creamy, a little theatrical. Exactly as it should be.",                 price:320, tag:"Signature",  img:"images/pistachio-cake.jpg"},
-    {name:"Chocolate Lava Cake",   qty:"1 piece",           desc:"Warm, dark, completely molten inside. Order it last — eat it first.",           price:300, tag:"Warm",       img:"images/chocolate-lava.jpg"},
-    {name:"Gulab Jamun",           qty:"4 pieces",          desc:"Soft milk dumplings soaked in cardamom-rose syrup. Warm, classic, faultless.", price:160, tag:"Desi",       img:"images/gulab-jamun.jpg"},
-    {name:"Mango Cheesecake",      qty:"1 slice (200 g)",   desc:"Creamy base, fresh mango layer, buttery crust. No-bake and no regrets.",        price:290, tag:"Chilled",    img:"images/mango-cheesecake.jpg"}
+    {name:"Tiramisu",              qty:"1 piece (80 g)",   desc:"Espresso-soaked layers, mascarpone dreams, cocoa dust finish.",                 price:90, tag:"Dessert",    img:"images/tiramisu.jpg"},
+    {name:"Pistachio Ice Cream Cake", qty:"1 slice (80 g)",desc:"Nutty, creamy, frozen layers of pistachio — a little theatrical. Exactly as it should be.", price:100, tag:"Signature",  img:"images/pistachio-cake.jpg"}
   ]
 };
 
@@ -367,7 +363,7 @@ function buildCards(sec){
     card.querySelector('.wa-btn').addEventListener('click',()=>{
       const sel=card.querySelector('.variant-pick');
       const label=sel?`${item.name} (${sel.value})`:item.name;
-      const msg=encodeURIComponent(`Hi! I'd like to order from Kooky Kafe:\n\n${label} x${qty} — ₹${item.price*qty}\n\nTotal: ₹${item.price*qty}`);
+      const msg=encodeURIComponent(`Hi! I'd like to place a delivery order from Kooky Kafe:\n\n${label} x${qty} — ₹${item.price*qty}\n\nTotal: ₹${item.price*qty}\n\nPlease confirm my order and share the delivery details. 🙏`);
       window.open(`https://wa.me/?text=${msg}`,'_blank');
     });
     grid.appendChild(card);
@@ -429,7 +425,7 @@ function toggleCart(){
 function sendToWA(){
   const lines=cart.map(i=>`${i.name} x${i.qty} — ₹${i.price*i.qty}`).join('\n');
   const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const msg=encodeURIComponent(`Hi! I'd like to place an order at Kooky Kafe:\n\n${lines}\n\nTotal: ₹${total}`);
+  const msg=encodeURIComponent(`Hi! I'd like to place a delivery order from Kooky Kafe:\n\n${lines}\n\nTotal: ₹${total}\n\nPlease confirm my order and share the delivery details. 🙏`);
   window.open(`https://wa.me/?text=${msg}`,'_blank');
 }
 
@@ -443,7 +439,6 @@ document.querySelectorAll('.cat-btn').forEach(btn=>{
 });
 
 buildCards('sips');
-buildCards('boba');
 buildCards('veg');
 buildCards('nonveg');
 buildCards('sweets');
