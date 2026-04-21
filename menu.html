@@ -36,7 +36,7 @@
 
 /* ─── GLOBAL ─── */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:var(--deep);min-height:100vh;overflow-x:hidden;}
+body{background:var(--bg);font-family:'Cormorant Garamond',serif;color:#1a0905;min-height:100vh;overflow-x:hidden;}
 
 /* ─── GRADIENT TEXT UTILITY ─── */
 .g{
@@ -53,7 +53,7 @@ header{
   /* subtle gold dust on top edge */
   padding:0.9rem 2.5rem;
   display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;z-index:100;
+  position:fixed;top:0;left:0;right:0;z-index:100;
   border-bottom:1px solid transparent;
   background-image:
     linear-gradient(170deg,#1a0905 0%,#130702 100%);
@@ -92,12 +92,12 @@ header::after{
 }
 .kk{font-family:'Mirza',serif;font-size:19px;font-weight:700;letter-spacing:-2px;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .logo-text h1{font-family:'Mirza',serif;font-size:1.7rem;letter-spacing:0.06em;line-height:1;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.logo-text .sub{font-family:'Baumans',sans-serif;font-size:0.52rem;color:var(--silver-a);letter-spacing:0.3em;text-transform:uppercase;margin-top:3px;display:block;}
+.logo-text .sub{font-family:'Baumans',sans-serif;font-size:0.62rem;color:var(--silver-a);letter-spacing:0.3em;text-transform:uppercase;margin-top:3px;display:block;}
 .cart-trigger{
   position:relative;z-index:1;
   background:linear-gradient(110deg,#c9a84c 0%,#e8c96a 55%,#a06020 100%);
   border:none;border-radius:50px;padding:0.55rem 1.3rem;
-  color:#fff;font-family:'Baumans',sans-serif;font-size:0.78rem;
+  color:#1a0905;font-family:'Baumans',sans-serif;font-size:0.78rem;
   letter-spacing:0.12em;cursor:pointer;
   display:flex;align-items:center;gap:0.6rem;
   transition:opacity 0.2s,transform 0.2s;font-weight:700;
@@ -110,7 +110,7 @@ header::after{
 /* ─── HERO ─── */
 .hero{
   background:#ffffff;
-  padding:3.5rem 2.5rem 3rem;text-align:center;position:relative;overflow:hidden;
+  padding:calc(3.5rem + 126px) 2.5rem 3rem;text-align:center;position:relative;overflow:hidden;
   border-bottom:1px solid rgba(36,16,6,0.1);
 }
 /* soft blue vignette at top */
@@ -127,13 +127,13 @@ header::after{
 }
 .hero h2{font-family:'Mirza',serif;font-size:clamp(2.6rem,5.5vw,3.8rem);color:#1a0905;letter-spacing:0.1em;position:relative;}
 .hero h2 .g{display:inline;}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:#9a7a5a;font-size:1rem;margin-top:0.7rem;letter-spacing:0.04em;position:relative;}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:#9a7a5a;font-size:1.15rem;margin-top:0.7rem;letter-spacing:0.04em;position:relative;}
 
 /* ─── CATEGORY NAV ─── */
 .cat-nav{
   display:flex;justify-content:center;flex-wrap:wrap;gap:0.5rem;
   padding:1rem 2rem;background:#ffffff;
-  position:sticky;top:69px;z-index:50;
+  position:fixed;top:72px;left:0;right:0;z-index:50;
   box-shadow:0 1px 0 0 rgba(36,16,6,0.1);
 }
 .cat-btn{
@@ -143,12 +143,12 @@ header::after{
   padding:0.38rem 1.2rem;font-family:'Baumans',sans-serif;font-size:0.75rem;
   letter-spacing:0.22em;text-transform:uppercase;color:#6b3d14;cursor:pointer;transition:all 0.25s;
 }
-.cat-btn:hover{border-color:rgba(201,168,76,0.55);color:var(--deep);}
+.cat-btn:hover{border-color:rgba(201,168,76,0.55);color:#1a0905;}
 .cat-btn.active{
   background:linear-gradient(#1a0905,#1a0905) padding-box,
              var(--gb-line) border-box;
   border:1px solid transparent;
-  color:#fff;font-weight:700;
+  color:#1a0905;font-weight:700;
 }
 
 /* ─── MENU SECTION ─── */
@@ -204,17 +204,17 @@ header::after{
 .card-tag{
   position:absolute;top:0.9rem;left:0.9rem;
   background:linear-gradient(110deg,#c9a84c,#e8c96a 60%,#a06020);
-  color:#fff;font-family:'Baumans',sans-serif;font-size:0.56rem;
+  color:#1a0905;font-family:'Baumans',sans-serif;font-size:0.56rem;
   letter-spacing:0.2em;text-transform:uppercase;padding:3px 10px;border-radius:50px;z-index:2;font-weight:700;
 }
 .card-body{padding:1.1rem 1.3rem 1.3rem;}
 .card-name{font-family:'Mirza',serif;font-size:1.2rem;color:var(--text-light);margin-bottom:0.25rem;line-height:1.2;}
 .card-qty{
-  font-family:'Baumans',sans-serif;font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;
+  font-family:'Baumans',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;
   margin-bottom:0.35rem;opacity:0.8;
   background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.card-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:var(--text-dim);margin-bottom:0.9rem;line-height:1.55;}
+.card-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--text-dim);margin-bottom:0.9rem;line-height:1.55;}
 .variant-pick{
   background:rgba(255,255,255,0.04);
   border:1px solid transparent;
@@ -244,7 +244,7 @@ header::after{
   flex:1;
   background:linear-gradient(110deg,#c9a84c 0%,#e8c96a 55%,#a06020 100%);
   border:none;border-radius:8px;padding:0.5rem 0.6rem;
-  color:#fff;font-family:'Baumans',sans-serif;font-size:0.7rem;
+  color:#1a0905;font-family:'Baumans',sans-serif;font-size:0.7rem;
   letter-spacing:0.1em;cursor:pointer;font-weight:700;
   transition:opacity 0.2s,transform 0.2s;
 }
@@ -285,7 +285,7 @@ header::after{
   background:linear-gradient(to right,transparent,rgba(201,168,76,0.45),transparent);
 }
 .cart-head h3{font-family:'Mirza',serif;font-size:1.5rem;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.cart-head .sub-h{font-family:'Baumans',sans-serif;font-size:0.56rem;color:var(--silver-a);letter-spacing:0.25em;text-transform:uppercase;margin-top:3px;display:block;}
+.cart-head .sub-h{font-family:'Baumans',sans-serif;font-size:0.68rem;color:var(--silver-a);letter-spacing:0.25em;text-transform:uppercase;margin-top:3px;display:block;}
 .close-btn{
   background:transparent;
   border:1px solid transparent;
@@ -315,7 +315,7 @@ header::after{
   width:100%;
   background:linear-gradient(110deg,#c9a84c 0%,#e8c96a 55%,#a06020 100%);
   border:none;border-radius:12px;padding:0.9rem;
-  color:#fff;font-family:'Baumans',sans-serif;font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-weight:700;transition:all 0.3s;
+  color:#1a0905;font-family:'Baumans',sans-serif;font-size:0.82rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-weight:700;transition:all 0.3s;
 }
 .order-btn:hover{opacity:0.88;transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,61,158,0.3);}
 
@@ -354,8 +354,8 @@ header::after{
 .fr-kk{font-family:'Mirza',serif;font-size:20px;font-weight:700;letter-spacing:-2px;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .footer-info h2{font-family:'Mirza',serif;font-size:1.9rem;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
 .footer-info p{font-family:'Baumans',sans-serif;font-size:0.56rem;color:var(--silver-a);letter-spacing:0.32em;text-transform:uppercase;margin-top:4px;}
-.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--silver-a);font-size:0.95rem;margin-top:1.6rem;letter-spacing:0.03em;position:relative;z-index:1;}
-.footer-address{font-family:'Baumans',sans-serif;font-size:0.68rem;color:var(--silver-a);letter-spacing:0.2em;text-transform:uppercase;margin-top:0.8rem;position:relative;z-index:1;}
+.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--silver-a);font-size:1.08rem;margin-top:1.6rem;letter-spacing:0.03em;position:relative;z-index:1;}
+.footer-address{font-family:'Baumans',sans-serif;font-size:0.82rem;color:var(--silver-a);letter-spacing:0.2em;text-transform:uppercase;margin-top:0.8rem;position:relative;z-index:1;}
 
 /* ─── POLICIES ─── */
 .policy-section{margin-top:3rem;border-top:1px solid rgba(201,168,76,0.18);padding-top:2.5rem;position:relative;z-index:1;}
@@ -378,7 +378,7 @@ header::after{
 }
 .policy-icon{font-size:1.2rem;margin-bottom:0.5rem;}
 .policy-block h4{font-family:'Mirza',serif;font-size:1rem;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.4rem;}
-.policy-block p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.84rem;color:var(--silver-a);line-height:1.55;}
+.policy-block p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--silver-a);line-height:1.6;}
 .preorder-badge{display:inline-block;background:rgba(26,61,158,0.2);border:1px solid rgba(201,168,76,0.3);border-radius:50px;padding:2px 10px;font-family:'Baumans',sans-serif;font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-b);margin-bottom:0.4rem;}
 
 /* ─── REVIEWS ─── */
@@ -400,7 +400,7 @@ header::after{
   background:linear-gradient(to right,transparent,rgba(201,168,76,0.45),transparent);
 }
 .review-stars{font-size:0.75rem;letter-spacing:0.1em;margin-bottom:0.5rem;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.review-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:var(--silver-a);line-height:1.55;margin-bottom:0.5rem;}
+.review-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--silver-a);line-height:1.6;margin-bottom:0.5rem;}
 .review-author{font-family:'Baumans',sans-serif;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;background:var(--gold-grad-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .review-form-wrap{
   background:linear-gradient(#2a1208,#2a1208) padding-box,
@@ -431,7 +431,7 @@ header::after{
   margin-top:0.75rem;
   background:linear-gradient(110deg,#c9a84c 0%,#e8c96a 55%,#a06020 100%);
   border:none;border-radius:8px;padding:0.45rem 1.2rem;
-  color:#fff;font-family:'Baumans',sans-serif;font-size:0.68rem;
+  color:#1a0905;font-family:'Baumans',sans-serif;font-size:0.68rem;
   letter-spacing:0.12em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:opacity 0.2s,transform 0.2s;
 }
 .review-submit:hover{opacity:0.85;transform:scale(1.02);}
@@ -442,7 +442,7 @@ header::after{
   .menu-sec{padding:2rem 1.2rem;}
   .cart-panel{width:100%;right:-100%;}
   .grid{grid-template-columns:1fr;}
-  .hero h2{font-size:2.3rem;}
+  .hero h2{font-size:2.3rem;} .hero{padding-top:calc(2rem + 118px);}
   .cat-nav{top:65px;gap:0.35rem;padding:0.8rem 0.9rem;}
   .cat-btn{padding:0.32rem 0.85rem;font-size:0.68rem;}
   .footer-card{flex-direction:column;padding:1.1rem 1.5rem;}
@@ -605,8 +605,8 @@ const items={
     {name:"Chamomile Tea",       qty:"200 ml", desc:"Soft, honeyed, and gently floral. The kind of calm you didn't know you needed.",                                           price:60,  tag:"Herbal",        img:"images/chamomile.jpg"}
   ],
   veg:[
-    {name:"Rice Bowl with Curry",qty:"1 bowl (350 g)",     desc:"Earthy, slow-cooked curry — warm, deeply spiced, and unapologetically comforting on basmati.",                 price:140, tag:"Bowl",      img:"images/curryrice.jpg"},
-    {name:"Paratha",             qty:"1 piece",            desc:"Buttery, layered, and griddle-crisped. Savory and wholesome in every bite.",                                    price:60,  tag:"Homestyle", img:"images/paratha.jpg",
+    {name:"Rice Bowl with Curry",qty:"1 bowl (350 g)",     desc:"Earthy, slow-cooked curry — warm, deeply spiced, and unapologetically comforting on basmati.",                 price:120, tag:"Bowl",      img:"images/curryrice.jpg"},
+    {name:"Paratha",             qty:"1 piece",            desc:"Buttery, layered, and griddle-crisped. Savory and wholesome in every bite.",                                    price:40,  tag:"Homestyle", img:"images/paratha.jpg",
       variants:["Aloo Paratha","Paneer Paratha","Laccha Paratha","Methi Paratha"]},
     {name:"Chilli Garlic Toast", qty:"4 pieces",           desc:"Punchy, garlicky, with a fiery red chilli edge. Crisp outside, bold all the way through.",                     price:80,  tag:"Toasted",   img:"images/chillicheesetoast.jpg"},
     {name:"Cheese Sandwich",     qty:"1 piece (2 slices)", desc:"Gooey, golden, and melty at the core. Comfort food that never needs an occasion.",                             price:90,  tag:"Toasted",   img:"images/cheesesandwich.jpg"},
@@ -618,7 +618,7 @@ const items={
     {name:"Chicken Nuggets",     qty:"500 g",             desc:"Juicy, seasoned chicken with a shattering golden crust. Dip, bite, repeat.",                                    price:150, tag:"Crispy",    img:"images/chickennuggets.jpg",
       variants:["Ketchup","Honey Mustard","Chipotle Mayo","Garlic Dip"]},
     {name:"Chicken Soup",        qty:"1 bowl (300 ml)",   desc:"Light, restorative, with a clean savory depth. The one that genuinely makes things feel better.",               price:120, tag:"Soup",      img:"images/chickensoup.jpg"},
-    {name:"Shami Kababs",        qty:"3 pieces",          desc:"Soft, pan-seared patties — subtly spiced, deeply flavourful. Quiet confidence on a plate.",                    price:110, tag:"Pan-Fried", img:"images/shamikabab.jpg"}
+    {name:"Shami Kababs",        qty:"4 pieces",          desc:"Soft, pan-seared patties — subtly spiced, deeply flavourful. Quiet confidence on a plate.",                    price:110, tag:"Pan-Fried", img:"images/shamikabab.jpg"}
   ],
   sweets:[
     {name:"Tiramisu",                qty:"1 piece (100 g)", desc:"Espresso-bitter, mascarpone-rich, dusted with cocoa. Indulgence with Italian restraint.",                      price:90,  tag:"Dessert",   img:"images/tiramisu.jpg"},
