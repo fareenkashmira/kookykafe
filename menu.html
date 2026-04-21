@@ -253,15 +253,15 @@ const WA_ICON=`<svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c
 
 const items = {
   sips:[
-    {name:"Iced Americano",          qty:"300 ml", desc:"Cold espresso over ice. No drama — pure clarity.",                                            price:80,  tag:"Cold Brew",    img:"images/icedamericano.jpg"},
-    {name:"Hibiscus Mojito",         qty:"350 ml", desc:"Tangy hibiscus, fresh mint, a whisper of lime. A whole mood.",                               price:75,  tag:"Signature",    img:"images/hibiscusmohito.jpg"},
-    {name:"Orange Slushie",          qty:"350 ml", desc:"Crushed citrus and ice — bright, cold, unapologetically loud.",                              price:75,  tag:"Chilled",      img:"images/orangeslushie.jpg"},
-    {name:"Cold Coffee",             qty:"300 ml", desc:"Rich, creamy, iced. The kind you don't want to finish.",                                     price:90,  tag:"Classic",      img:"images/coldcoffee.jpg"},
-    {name:"Rose Lassi",              qty:"300 ml", desc:"Chilled yoghurt blended with rose, cardamom, and a touch of sweetness. Soft and nostalgic.", price:80,  tag:"Lassi",        img:"images/roselassi.jpg"},
-    {name:"Blue Lemonade Fizz",      qty:"350 ml", desc:"Butterfly pea flower tea meets fizzy lemon. Colour-shifting, floral, and very extra.",       price:90,  tag:"Butterfly Pea",img:"images/bluelemonade.jpg"},
-    {name:"Boba Tea",                qty:"350 ml", desc:"Chewy tapioca pearls in your choice of milk or fruit tea. Sip slow — good things take time.",price:130, tag:"Boba",         img:"images/bobbatea.jpg",
+    {name:"Iced Americano",          qty:"450 ml", desc:"Cold espresso over ice. No drama — pure clarity.",                                            price:80,  tag:"Cold Brew",    img:"images/icedamericano.jpg"},
+    {name:"Hibiscus Mojito",         qty:"400 ml", desc:"Tangy hibiscus, fresh mint, a whisper of lime. A whole mood.",                               price:75,  tag:"Signature",    img:"images/hibiscusmohito.jpg"},
+    {name:"Orange Slushie",          qty:"400 ml", desc:"Crushed citrus and ice — bright, cold, unapologetically loud.",                              price:75,  tag:"Chilled",      img:"images/orangeslushie.jpg"},
+    {name:"Cold Coffee",             qty:"310 ml", desc:"Rich, creamy, iced. The kind you don't want to finish.",                                     price:90,  tag:"Classic",      img:"images/coldcoffee.jpg"},
+    {name:"Rose Lassi",              qty:"310 ml", desc:"Chilled yoghurt blended with rose, cardamom, and a touch of sweetness. Soft and nostalgic.", price:80,  tag:"Lassi",        img:"images/roselassi.jpg"},
+    {name:"Blue Lemonade Fizz",      qty:"400 ml", desc:"Butterfly pea flower tea meets fizzy lemon. Colour-shifting, floral, and very extra.",       price:90,  tag:"Butterfly Pea",img:"images/bluelemonade.jpg"},
+    {name:"Boba Tea",                qty:"310 ml", desc:"Chewy tapioca pearls in your choice of milk or fruit tea. Sip slow — good things take time.",price:130, tag:"Boba",         img:"images/bobbatea.jpg",
       variants:["Brown Sugar Milk Tea","Taro Milk Tea","Matcha Milk Tea","Strawberry Fruit Tea","Mango Fruit Tea","Lychee Fruit Tea","Passion Fruit Tea","Peach Tea"]},
-    {name:"Chamomile Tea",           qty:"350 ml", desc:"Floral, calm, quietly elegant. Served chilled with a curl of honey.",                        price:60,  tag:"Herbal",       img:"images/chamomile.jpg"}
+    {name:"Chamomile Tea",           qty:"200 ml", desc:"Floral, calm, quietly elegant. Served chilled with a curl of honey.",                        price:60,  tag:"Herbal",       img:"images/chamomile.jpg"}
   ],
   veg:[
     {name:"Rice Bowl with Curry",    qty:"1 bowl (350 g)",     desc:"Comfort in a bowl. Slow-cooked curry on steamed basmati.",                                    price:140, tag:"Bowl",      img:"images/curryrice.jpg"},
@@ -273,14 +273,14 @@ const items = {
       variants:["Arrabbiata","Aglio e Olio","Pesto","Marinara"]}
   ],
   nonveg:[
-    {name:"Chicken Dum Biryani",     qty:"1 serving (400 g)", desc:"Saffron-kissed, slow-cooked. Tender chicken layered with fragrant rice — a whole ritual.",      price:180, tag:"Dum Style", img:"images/dumbiryani.jpg"},
+    {name:"Chicken Biryani",     qty:"1 serving (500 g)", desc:"One-pot dish of spiced chicken and basmati rice, slow-cooked together with saffron and whole spices until every grain is rich with flavour. — a whole ritual.",      price:180, tag:"Dum Style", img:"images/dumbiryani.jpg"},
     {name:"Chicken Nuggets",         qty:"6 pieces",          desc:"Crispy golden outside, juicy inside. Served with your choice of dip.",                          price:130, tag:"Crispy",    img:"images/chickennuggets.jpg",
       variants:["Ketchup","Honey Mustard","Chipotle Mayo","Garlic Dip"]},
     {name:"Chicken Soup",            qty:"1 bowl (300 ml)",   desc:"Slow-simmered, light, restorative. The kind that actually fixes things.",                        price:120, tag:"Soup",      img:"images/chickensoup.jpg"},
     {name:"Shami Kababs",            qty:"3 pieces (plate)",  desc:"Soft pan-fried patties — subtle spice, deep flavor, zero noise. Served with green chutney.",    price:110, tag:"Pan-Fried", img:"images/shamikabab.jpg"}
   ],
   sweets:[
-    {name:"Tiramisu",                qty:"1 piece (80 g)",  desc:"Espresso-soaked layers, mascarpone dreams, cocoa dust finish.",                                    price:90,  tag:"Dessert",   img:"images/tiramisu.jpg"},
+    {name:"Tiramisu",                qty:"1 piece (100 g)",  desc:"Espresso-soaked layers, mascarpone dreams, cocoa dust finish.",                                    price:90,  tag:"Dessert",   img:"images/tiramisu.jpg"},
     {name:"Pistachio Ice Cream Cake",qty:"1 slice (80 g)",  desc:"Nutty, creamy, frozen layers of pistachio — a little theatrical. Exactly as it should be.",       price:100, tag:"Signature", img:"images/pistachioicecreamcake.jpg"}
   ]
 };
@@ -333,7 +333,7 @@ function buildCards(sec){
       const sel=card.querySelector('.variant-pick');
       const label=sel?`${item.name} (${sel.value})`:item.name;
       const msg=encodeURIComponent(`Hi! I'd like to place a delivery order from Kooky Kafe:\n\n${label} x${qty} — ₹${item.price*qty}\n\nTotal: ₹${item.price*qty}\n\nPlease confirm my order and share the delivery details. 🙏`);
-      window.open(`https://wa.me/?text=${msg}`,'_blank');
+      window.open(`https://wa.me/917011403207?text=${msg}`,'_blank');
     });
     grid.appendChild(card);
   });
@@ -395,7 +395,7 @@ function sendToWA(){
   const lines=cart.map(i=>`${i.name} x${i.qty} — ₹${i.price*i.qty}`).join('\n');
   const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
   const msg=encodeURIComponent(`Hi! I'd like to place a delivery order from Kooky Kafe:\n\n${lines}\n\nTotal: ₹${total}\n\nPlease confirm my order and share the delivery details. 🙏`);
-  window.open(`https://wa.me/?text=${msg}`,'_blank');
+  window.open(`https://wa.me/917011403207?text=${msg}`,'_blank');
 }
 
 document.querySelectorAll('.cat-btn').forEach(btn=>{
