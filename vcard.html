@@ -169,7 +169,7 @@ body {
   border-radius: 50%;
   border: 1.5px solid rgba(201,168,76,0.4);
   display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,0.04);
+  background: #1C0902;
   box-shadow: 0 0 20px rgba(201,168,76,0.12);
   animation: pulse-ring 3s ease-in-out infinite;
   overflow: hidden;
@@ -180,9 +180,11 @@ body {
   50%       { box-shadow: 0 0 32px rgba(201,168,76,0.28); }
 }
 .bh-logo-img {
-  width: 78px; height: 78px;
-  object-fit: contain;
+  width: 100%; height: 100%;
+  object-fit: cover;
   display: block;
+  mix-blend-mode: screen;
+  border-radius: 50%;
 }
 /* Fallback initials if image fails */
 .logo-fallback {
