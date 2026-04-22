@@ -132,7 +132,10 @@
     var msg = document.getElementById('message-box').value.trim();
     if (!msg) { alert('Enter a message first!'); return; }
     var number = contacts[i].number;
-    var url = 'https://wa.me/'+number+'?text='+encodeURIComponent(msg);
+    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    var url = isMobile
+      ? 'https://wa.me/'+number+'?text='+encodeURIComponent(msg)
+      : 'whatsapp://send?phone='+number+'&text='+encodeURIComponent(msg);
     window.open(url,'_blank');
     setTimeout(function(){ contacts[i].done=true; render(); },1500);
   }
